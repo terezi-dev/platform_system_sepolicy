@@ -81,7 +81,7 @@ allow incidentd {
 }:file r_file_perms;
 
 # Signal java processes to dump their stack and get the results
-allow incidentd { appdomain ephemeral_app system_server }:process signal;
+allow incidentd { appdomain system_server }:process signal;
 
 # Signal native processes to dump their stack.
 # This list comes from native_processes_to_dump in incidentd/utils.c

@@ -7,7 +7,6 @@ type simpleperf_exec, system_file_type, exec_type, file_type;
 
 # Define apps that can be marked debuggable/profileable and be profiled by simpleperf.
 define(`simpleperf_profileable_apps', `{
-  ephemeral_app
   isolated_app
   platform_app
   priv_app

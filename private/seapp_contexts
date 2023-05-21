@@ -133,9 +133,6 @@ neverallow user=shell domain=((?!shell).)*
 neverallow domain=shell name=((?!com\.android\.shell).)*
 neverallow user=shell name=((?!com\.android\.shell).)*
 
-# Ephemeral Apps must run in the ephemeral_app domain
-neverallow isEphemeralApp=true domain=((?!ephemeral_app).)*
-
 isSystemServer=true domain=system_server
 
 # sdksandbox must run in the sdksandbox domain
@@ -161,8 +158,6 @@ user=_sdksandbox domain=sdk_sandbox type=sdk_sandbox_data_file levelFrom=all
 user=_app seinfo=app_zygote domain=app_zygote levelFrom=user
 user=_app seinfo=media domain=mediaprovider type=app_data_file levelFrom=user
 user=_app seinfo=platform domain=platform_app type=app_data_file levelFrom=user
-user=_app seinfo=base isEphemeralApp=true domain=ephemeral_app type=app_data_file levelFrom=all
-user=_app isEphemeralApp=true domain=ephemeral_app type=app_data_file levelFrom=all
 user=_app seinfo=base isPrivApp=true domain=priv_app type=privapp_data_file levelFrom=user
 user=_app isPrivApp=true domain=priv_app type=privapp_data_file levelFrom=user
 user=_app seinfo=base isPrivApp=true name=com.google.android.permissioncontroller domain=permissioncontroller_app type=privapp_data_file levelFrom=all
